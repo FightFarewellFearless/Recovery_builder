@@ -1,4 +1,4 @@
-name: Build recovery(twrp,shrp,pbrp)
+name: Build recovery new(twrp,shrp,pbrp)
 on:
   workflow_dispatch:
 
@@ -15,7 +15,7 @@ env:
   # 1) every device tree use main file called twrp_/omni_****.mk use the name between .mk and omni_/twrp_ keyword
   DEVICE: a03
   # 2) device tree link
-  DT_LINK: https://github.com/SA-17/android_device_infinix_Infinix-X698
+  DT_LINK: https://gitlab.com/ItzKaguya/twrp_device_samsung_a03.git
   # 3) device manufacturer please you the one which used on device.mk or BoardConfig.mk 
   MANUFACTURER: samsung
   # 4) target build. depend on what you have on you phone. recovery partition: recovery or recovery in boot partition: boot
