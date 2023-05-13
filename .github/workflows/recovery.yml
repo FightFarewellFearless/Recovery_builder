@@ -7,9 +7,9 @@ env:
 
   # A) choosing right manifest:
   # 1) manifest is required choose the compatible its depend on your current android version.
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
   # 2) manifest branch same thing it depend on your current android
-  BRANCH: twrp-9.0
+  BRANCH: twrp-12.1
 
   # B) Information about your device:
   # 1) every device tree use main file called twrp_/omni_****.mk use the name between .mk and omni_/twrp_ keyword
@@ -41,6 +41,7 @@ jobs:
        - name: remove pkg and setting repo
          run: |
             sudo apt update && sudo apt install git zip
+            wget -qO - https://github.com/SA-17/Recovery_builder/raw/main/scripts/cleanup.sh  | bash
             cd .. && sudo -E apt-get -qq update
             sudo apt install python-is-python3
             sudo -E apt-get -qq install bc build-essential tar zip curl libstdc++6 git wget gcc clang libssl-dev repo rsync flex curl  bison aria2
